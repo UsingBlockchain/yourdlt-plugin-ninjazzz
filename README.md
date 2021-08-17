@@ -23,6 +23,7 @@ Following components are defined and exported with this library:
 | Class | Description |
 | --- | --- |
 | `Dojo` | Mixin that displays a page with ninjas appearing with idle time. |
+| `Ninja` | Component that displays a Ninja image (svg) with a HTML color. |
 
 ## Sponsor us
 

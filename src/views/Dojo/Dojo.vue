@@ -22,7 +22,7 @@
           :fields="ninjaFields"
           :page-size="10"
           :disable-headers="!myNinjas || !myNinjas.length"
-          :disable-single-page-links="true"
+          :disable-single-page-links="false"
           :disable-rows-grid="true"
           :disable-placeholder-grid="true"
           :key="ninjasTimestamp"
@@ -48,6 +48,12 @@
       <p>Whenever the NinjaZZZ game is rendered, a block listener is started that will display a Ninja whenever a new block is harvested on the network.</p>
       <p>What happens if you click the appearing Ninja(s) - is up for you to find out.</p>
       <p>Catch them all!</p>
+      <a
+        class="github-fork-ribbon right-bottom"
+        :href="forkUrl"
+        target="_blank"
+        data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub">Fork me on GitHub</a>
     </div>
 
     <ModalNinjaCatcher
@@ -69,7 +75,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import { GenericTableDisplay } from '@yourdlt/wallet-components';
 import { Address, BlockInfo, Deadline, IListener, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionMapping, TransferTransaction, UInt64 } from 'symbol-sdk';
 import { Subscription } from 'rxjs';
@@ -92,6 +98,9 @@ import ModalNinjaViewer from '../ModalNinjaViewer/ModalNinjaViewer.vue';
   }
 })
 export default class Dojo extends Vue {
+
+  @Prop({ default: 'https://github.com/UsingBlockchain/yourdlt-plugin-ninjazzz' })
+  public forkUrl: string;
 
   /**
    * Whether currently displaying the CATCH modal box
@@ -284,4 +293,5 @@ export default class Dojo extends Vue {
 
 <style lang="less" scoped>
 @import "./Dojo.less";
+@import "./ForkMe.less";
 </style>

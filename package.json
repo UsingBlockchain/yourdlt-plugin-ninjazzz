@@ -2,7 +2,7 @@
   "name": "@yourdlt/plugin-ninjazzz",
   "description": "NinjaZZZ enlightens your lazy times. Hint: **Idle time**.",
   "homepage": "https://github.com/UsingBlockchain/yourdlt-plugin-ninjazzz#readme",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Using Blockchain Ltd",
     "email": "info@ubc.digital",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@yourdlt/wallet-api-bridge": "latest",
-    "@yourdlt/wallet-components": "file:/Users/greg/Sources/using-blockchain/@yourdlt/wallet-components",
+    "@yourdlt/wallet-components": "latest",
     "vue": "^2.6.10",
     "vue-property-decorator": "^8.1.0",
     "symbol-sdk": "^1.0.1",
