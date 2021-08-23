@@ -36,6 +36,15 @@
           <template v-slot:empty>
             <h2 class="empty-list">You haven't caught any NinjaZZZ. Hint: <b>Idle time</b>.</h2>
           </template>
+          <template v-slot:rows="props">
+            <GenericTableRow
+              v-for="(rowValues, index) in props.items"
+              :key="index"
+              :row-values="rowValues"
+              @on-remove="$emit('on-remove', rowValues)"
+              @click="$emit('on-clicked-row', index)"
+            />
+          </template>
         </GenericTableDisplay>
       </div>
     </div>
