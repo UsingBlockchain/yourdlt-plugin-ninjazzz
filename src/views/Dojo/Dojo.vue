@@ -85,7 +85,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
-import { GenericTableDisplay } from '@yourdlt/wallet-components';
+import { GenericTableDisplay, GenericTableRow } from '@yourdlt/wallet-components';
 import { Address, BlockInfo, Deadline, IListener, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionMapping, TransferTransaction, UInt64 } from 'symbol-sdk';
 import { Subscription } from 'rxjs';
 import { TransactionURI } from 'symbol-uri-scheme';
@@ -102,6 +102,7 @@ import ModalNinjaViewer from '../ModalNinjaViewer/ModalNinjaViewer.vue';
 @Component({
   components: {
     GenericTableDisplay,
+    GenericTableRow,
     ModalNinjaCatcher,
     ModalNinjaViewer,
   }
