@@ -26,7 +26,6 @@
           :disable-rows-grid="true"
           :disable-placeholder-grid="true"
           :key="ninjasTimestamp"
-          @on-clicked-row="onClickNinja"
         >
           <template v-slot:table-title>
             <h1 class="section-title">
@@ -42,7 +41,7 @@
               :key="index"
               :row-values="rowValues"
               @on-remove="$emit('on-remove', rowValues)"
-              @click="$emit('on-clicked-row', index)"
+              @click="onClickNinja(rowValues.hash)"
             />
           </template>
         </GenericTableDisplay>
@@ -99,6 +98,12 @@ import { AddressShortener } from '../../Helpers';
 import ModalNinjaCatcher from '../ModalNinjaCatcher/ModalNinjaCatcher.vue';
 import ModalNinjaViewer from '../ModalNinjaViewer/ModalNinjaViewer.vue';
 
+type NinjaModel = { 
+  owner: string,
+  height: string,
+  hash: string
+};
+
 @Component({
   components: {
     GenericTableDisplay,
@@ -126,9 +131,9 @@ export default class Dojo extends Vue {
 
   /**
    * Unfiltered list of caught ninjas
-   * @var {any[]}
+   * @var {NinjaModel[]}
    */
-  public myNinjas: any[];
+  public myNinjas: NinjaModel[];
 
   /**
    * The current signer address.
@@ -188,7 +193,7 @@ export default class Dojo extends Vue {
    * The last clicked Ninja.
    * @var {BlockInfo}
    */
-  protected lastClickedNinja: { owner: string, height: string, hash: string };
+  protected lastClickedNinja: NinjaModel;
 
   /// region computed properties
   public get ninjaFields(): any[] {
@@ -239,14 +244,15 @@ export default class Dojo extends Vue {
     }
   }
 
-  public onClickNinja(index) {
-    if (index <= 0 || index >= this.myNinjas.length) {
-      index = 0;
-    }
+  public onClickNinja(hash) {
+    const ninja: NinjaModel = this.myNinjas.find(
+      n => n.hash === hash
+    );
 
-    const ninja = this.myNinjas[index];
-    this.lastClickedNinja = ninja;
-    this.showNinjaViewerModal = true;
+    if (!! ninja) {
+      this.lastClickedNinja = ninja;
+      this.showNinjaViewerModal = true;
+    }
   }
 
   public async saveNinja(block: BlockInfo) {

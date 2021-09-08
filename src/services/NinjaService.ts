@@ -42,7 +42,7 @@ export class NinjaService {
         // use IPC to get data from app database (localStorage)
         const storeBus = await PluginBridge.StoreActionRequest(
             '@yourdlt/plugin-ninjazzz',
-            'action',
+            PluginBridge.PluginPermissionType.Action,
             'db/SELECT',
             {
                 table: 'ninjazzz.catches',
@@ -51,7 +51,10 @@ export class NinjaService {
             }
         )
 
-        console.log("ninjas: ", storeBus.response);
+        // handles emptiness
+        if (! ('response' in storeBus) || !storeBus.response || !storeBus.response.length) {
+            return [];
+        }
 
         // sort by id (ascending)
         return storeBus.response.map(b => b.values).sort(
@@ -73,7 +76,7 @@ export class NinjaService {
         // use IPC to save data in app database (localStorage)
         const storeBus = await PluginBridge.StoreActionRequest(
             '@yourdlt/plugin-ninjazzz',
-            'action',
+            PluginBridge.PluginPermissionType.Action,
             'db/INSERT',
             {
                 table: 'ninjazzz.catches',

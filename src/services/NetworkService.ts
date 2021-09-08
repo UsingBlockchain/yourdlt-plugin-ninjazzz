@@ -37,7 +37,7 @@ export class NetworkService {
         // Uses IPC to get repository factory from app store (Vuex)
         const networkBus = await PluginBridge.StoreActionRequest(
             '@yourdlt/plugin-ninjazzz',
-            'getter',
+            PluginBridge.PluginPermissionType.Getter,
             'network/repositoryFactory',
         );
 
@@ -62,7 +62,7 @@ export class NetworkService {
         // Uses IPC to get repository factory from app store (Vuex)
         const networkBus = await PluginBridge.StoreActionRequest(
             '@yourdlt/plugin-ninjazzz',
-            'getter',
+            PluginBridge.PluginPermissionType.Getter,
             'account/currentSignerAddress',
         );
 

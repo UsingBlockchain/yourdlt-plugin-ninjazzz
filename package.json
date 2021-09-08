@@ -2,7 +2,7 @@
   "name": "@yourdlt/plugin-ninjazzz",
   "description": "NinjaZZZ enlightens your lazy times. Hint: **Idle time**.",
   "homepage": "https://github.com/UsingBlockchain/yourdlt-plugin-ninjazzz#readme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": {
     "name": "Using Blockchain Ltd",
     "email": "info@ubc.digital",
@@ -14,7 +14,7 @@
   },
   "license": "LGPL-3.0-only",
   "main": "dist/YourDLTWalletPluginNinjaZZZ.common.js",
-  "types": "dist/Dojo.d.ts",
+  "types": "dist/types/Dojo.d.ts",
   "browser": {
     "./sfc": "dist/views/Dojo/Dojo.vue"
   },
