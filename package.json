@@ -2,7 +2,7 @@
   "name": "@yourdlt/plugin-ninjazzz",
   "description": "NinjaZZZ enlightens your lazy times. Hint: **Idle time**.",
   "homepage": "https://github.com/UsingBlockchain/yourdlt-plugin-ninjazzz#readme",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Using Blockchain Ltd",
     "email": "info@ubc.digital",
@@ -37,7 +37,7 @@
     "vue-property-decorator": "^8.1.0",
     "symbol-sdk": "^1.0.1",
     "symbol-uri-scheme": "^0.6.0",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.6.7"
   },
   "devDependencies": {
     "@babel/compat-data": "^7.14.0",
