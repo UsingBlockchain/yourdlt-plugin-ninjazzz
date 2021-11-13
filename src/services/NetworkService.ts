@@ -9,7 +9,7 @@
  */
 import Vue from 'vue';
 import { PluginBridge } from '@dhealth/wallet-api-bridge';
-import { Address, RepositoryFactoryHttp, RepositoryFactoryConfig, NetworkCurrencies } from 'symbol-sdk';
+import { Address, RepositoryFactoryHttp, RepositoryFactoryConfig, NetworkCurrencies } from '@dhealth/sdk';
 
 /**
  * @class {NetworkService}
@@ -58,7 +58,7 @@ export class NetworkService {
     /**
      * 
      */
-     public async getCurrentSigner(): Promise<Address> {
+    public async getCurrentSigner(): Promise<Address> {
         // Uses IPC to get repository factory from app store (Vuex)
         const networkBus = await PluginBridge.StoreActionRequest(
             '@yourdlt/plugin-ninjazzz',

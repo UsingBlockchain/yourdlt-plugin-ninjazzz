@@ -85,7 +85,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { GenericTableDisplay, GenericTableRow } from '@dhealth/wallet-components';
-import { Address, BlockInfo, Deadline, IListener, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionMapping, TransferTransaction, UInt64 } from 'symbol-sdk';
+import { Address, BlockInfo, Deadline, IListener, NetworkType, PlainMessage, RepositoryFactoryHttp, TransactionMapping, TransferTransaction, UInt64 } from '@dhealth/sdk';
 import { Subscription } from 'rxjs';
 import { TransactionURI } from 'symbol-uri-scheme';
 

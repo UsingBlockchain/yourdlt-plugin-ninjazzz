@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { BlockInfo } from 'symbol-sdk'
+import { BlockInfo } from '@dhealth/sdk'
 
 // internal child components
 import Ninja from '../Ninja/Ninja.vue';

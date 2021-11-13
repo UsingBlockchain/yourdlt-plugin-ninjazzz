@@ -2,7 +2,7 @@
   "name": "@yourdlt/plugin-ninjazzz",
   "description": "NinjaZZZ enlightens your lazy times. Hint: **Idle time**.",
   "homepage": "https://github.com/UsingBlockchain/yourdlt-plugin-ninjazzz#readme",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "name": "Using Blockchain Ltd",
     "email": "info@ubc.digital",
@@ -26,16 +26,16 @@
   "scripts": {
     "serve": "vue-cli-service serve src/Dojo.ts",
     "build": "npm run build:lib && npm run build:ts && npm run copy:vue",
-    "build:lib": "vue-cli-service build --target lib --name YourDLTWalletPluginNinjaZZZ src/Dojo.ts --mode production",
+    "build:lib": "vue-cli-service build --target lib --name YourDLTWalletPluginNinjaZZZ src/Dojo.ts --mode production --inline-vue --formats commonjs",
     "build:ts": "tsc --emitDeclarationOnly",
     "copy:vue": "cpy '**/*.vue' '../dist/' --cwd=src --parents"
   },
   "dependencies": {
-    "@dhealth/wallet-api-bridge": "latest",
-    "@dhealth/wallet-components": "latest",
+    "@dhealth/sdk": "^1.0.3-alpha-202110081200",
+    "@dhealth/wallet-api-bridge": "^1.3.0",
+    "@dhealth/wallet-components": "^1.3.0",
     "vue": "^2.6.10",
     "vue-property-decorator": "^8.1.0",
-    "symbol-sdk": "^1.0.1",
     "symbol-uri-scheme": "^0.6.0",
     "rxjs": "^6.6.7"
   },
