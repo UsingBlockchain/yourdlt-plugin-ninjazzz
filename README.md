@@ -9,7 +9,7 @@
 
 NinjaZZZ enlightens your lazy times. Hint: **Idle time**.
 
-This software repository can be installed as a plugin for [YourDLT Wallet][parent-url].
+This software repository can be installed as a plugin for [dHealth Wallet][parent-url].
 
 - [Components found here](#components-found-here)
 - [Sponsor Us](#sponsor-us)
@@ -50,7 +50,7 @@ Licensed under the [LGPL v3.0](LICENSE)
 
 [ref-ltd]: https://using-blockchain.org
 [mag-url]: https://ubc.digital
-[parent-url]: https://github.com/UsingBlockchain/yourdlt-wallet
+[parent-url]: https://github.com/dhealthproject/dhealth-wallet
 [npm-url]: https://www.npmjs.com/package/@yourdlt/plugin-ninjazzz
 [npm-badge]: https://img.shields.io/npm/v/@yourdlt/plugin-ninjazzz
 [dl-badge]: https://img.shields.io/npm/dt/@yourdlt/plugin-ninjazzz

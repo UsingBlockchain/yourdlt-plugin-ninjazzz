@@ -17,7 +17,6 @@ import Ninja from "./views/Ninja/Ninja.vue";
 /// region components library
 const components: { [s: string]: VueConstructor } = {
   Dojo,
-  Ninja,
 };
 
 export const registerComponents = (): { [s: string]: VueConstructor } => {
@@ -47,9 +46,8 @@ export default {
         title: "NinjaZZZ Dojo",
         hideFromMenu: true,
       },
-      // @ts-ignore
-      component: () => import("@/views/Dojo/Dojo.vue"),
       props: false,
+      // no-component
     },
   ],
 
